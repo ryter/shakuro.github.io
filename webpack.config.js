@@ -66,12 +66,10 @@ const conf = {
         test: /\.(png|gif|jpe?g)$/,
         loaders: [
             {
-              //loader: 'file-loader?name=images/[name].[ext]',
               loader: 'file-loader',
               options: {
                 name: '[name].[ext]',
-                outputPath: './images/',
-                //publicPath: '../images/'
+                outputPath: './images/'
               },
           },
           'img-loader',
