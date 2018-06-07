@@ -4,11 +4,13 @@
     justify-content: center;
     align-items: center;
     @extend %bg-login;
+    background-color: $gray-light-1;
     @include media-breakpoint-up(lg) {
       background-image: none;
     }
     @include media-breakpoint-down(sm) {
       background-image: none;
+      align-items: flex-start;
     }
 
     .main {
@@ -16,6 +18,10 @@
       width: 100%;
       max-width: 800px;
       align-items: center;
+      box-sizing: border-box;
+      @include media-breakpoint-down(lg) {
+        padding: 0 36px;
+      }
       @include media-breakpoint-down(md) {
         margin: 0 52px;
         padding: 24px;
@@ -52,7 +58,9 @@
     width: 50%;
     flex-shrink: 0;
     box-sizing: border-box;
-
+    @include media-breakpoint-down(lg) {
+      padding: 0 46px;
+    }
     @include media-breakpoint-down(sm) {
       width: 100%;
       margin-bottom: 20px;
@@ -60,9 +68,6 @@
   }
 
   &--info {
-    @include media-breakpoint-down(lg) {
-      padding: 0 46px 0 82px;
-    }
     @include media-breakpoint-down(md) {
       padding: 0 16px 0 0;
     }
@@ -82,9 +87,6 @@
   &--login {
     position: relative;
     z-index: 1;
-    @include media-breakpoint-down(lg) {
-      padding: 0 82px 0 46px;
-    }
     @include media-breakpoint-down(md) {
       padding: 0 0 0 16px;
     }
@@ -100,12 +102,12 @@
       height: 566px;
       z-index: -1;
       top: 50%;
+      left: 50%;
       @extend %bg-login;
       @include center();
       @include media-breakpoint-down(lg) {
         width: 482px;
         height: 566px;
-        left: calc(50% - 18px);
       }
       @include media-breakpoint-down(md) {
         display: none;

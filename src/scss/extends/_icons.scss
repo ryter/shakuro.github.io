@@ -11,5 +11,5 @@
 }
 
 %bg-login {
-	@include icon("../images/svg/bg-login.svg", 100%, auto, $gray-light-1, 50% 50%);
+	@include icon("../images/svg/bg-login.svg", 100%, auto, transparent, 50% 50%);
 }
