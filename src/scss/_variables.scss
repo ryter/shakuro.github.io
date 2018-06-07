@@ -3,10 +3,13 @@ $font-size-base   : 62.5%;
 $font-size-default: 10;
 $browser-context  : 14;
 
-//Fonts
+// Width
+$max-width: 800px;
+
+// Fonts
 $font-regular: 'Montserrat', sans-serif;
 
-//Colors
+// Colors
 $white: #fff;
 
 $black: #000;
@@ -19,3 +22,11 @@ $gray-light-2: #b7b7b7;
 $red : #dd3c39;
 
 $orange: #F5A623;
+
+// Breakpoint
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: $max-width
+);
