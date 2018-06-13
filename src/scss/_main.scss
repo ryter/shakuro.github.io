@@ -84,6 +84,16 @@
     }
   }
 
+  &--form-flip {
+    position: relative;
+    @include media-breakpoint-up(lg) {
+      transform-style: preserve-3d;
+      width: 272px;
+      height: 342px;
+    }
+    @include media-breakpoint-down(md) {}
+  }
+
   &--login {
     position: relative;
     z-index: 1;
@@ -94,16 +104,13 @@
       padding: 0;
     }
 
-    &:after {
-      content: '';
-      display: block;
+    &-bg {
       position: absolute;
       width: 482px;
       height: 566px;
       z-index: -1;
       top: 50%;
       left: 50%;
-      @extend %bg-login;
       @include center();
       @include media-breakpoint-down(lg) {
         width: 482px;
@@ -111,6 +118,15 @@
       }
       @include media-breakpoint-down(md) {
         display: none;
+      }
+
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @extend %bg-login;
       }
     }
   }

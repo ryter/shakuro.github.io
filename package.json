@@ -20,6 +20,7 @@
     "html-loader": "^0.5.5",
     "imagemin-webpack-plugin": "^2.1.5",
     "img-loader": "^3.0.0",
+    "include-file-webpack-plugin": "^1.0.3",
     "node-sass": "^4.9.0",
     "path": "^0.12.7",
     "postcss-cssnext": "^3.1.0",
@@ -34,6 +35,10 @@
     "svgo-loader": "^2.1.0",
     "webpack": "^4.5.0",
     "webpack-cli": "^3.0.1",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "webpack-inline-svg-plugin": "^1.1.4"
+  },
+  "dependencies": {
+    "animejs": "^2.2.0"
   }
 }

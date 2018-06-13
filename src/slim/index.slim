@@ -35,20 +35,37 @@ html
               a href="#" linkedin
 
         div.block--login
-          form.form.form--login
-            h2 Login
+          div.block--login-bg
+            div.bg
+          div.block--form-flip
 
-            p This is a secure system and you will need to provide your login details to access the site
+            form.form.form--login
+              h2 Login
+              p This is a secure system and you will need to provide your login details to access the site
 
-            div.form-group
-              input.form-control type="text" placeholder="User name"
 
-            div.form-group
-              input.form-control type="password" placeholder="Password"
+              div.form-group
+                input.form-control type="text" placeholder="User name"
 
-            a.btn-link.btn-link--right.btn--block href="#" Forgot password?
+              div.form-group
+                input.form-control type="password" placeholder="Password"
 
-            button.btn.btn--block Log in
+              a.btn-link.btn-link--right.btn--block.btn--forgot href="#" Forgot password?
+
+              button.btn.btn--block Log in
+
+            form.form.form--reset
+              h2 Reset password
+              p Please enter your credentials first. <br /> Won't be shared publicli won't be spammed.
+
+              div.form-group
+                input.form-control type="text" placeholder="User name"
+
+              div.form-group
+                input.form-control type="password" placeholder="Password"
+
+              button.btn.btn--block Log in
+              a.btn-link.btn-link--center.btn--block.btn--back href="#" Back to log-in page
 
 
     script src="./js/build.js"
