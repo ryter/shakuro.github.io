@@ -7,11 +7,14 @@
     box-sizing: border-box;
     @include media-breakpoint-up(lg) {
       position: absolute;
-      backface-visibility: hidden;
       border-radius: 6px;
       box-shadow: 0 20px 90px -30px rgba($black, 0.25);
       padding-right: 24px;
       padding-left: 24px;
+
+      .es6number & {
+        backface-visibility: hidden;
+      }
     }
     @include media-breakpoint-down(sm) {
       padding: 20px 16px;
@@ -32,8 +35,16 @@
   }
 
   &--reset {
+
     @include media-breakpoint-up(lg) {
-      transform: rotateY(180deg);
+      .es6number & {
+        transform: rotateY(180deg);
+      }
+
+      .no-es6number & {
+        opacity: 0;
+        z-index: -1;
+      }
     }
     @include media-breakpoint-down(md) {
       position: absolute;

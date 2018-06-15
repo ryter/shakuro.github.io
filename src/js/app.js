@@ -1,3 +1,4 @@
+import Modernizr from 'modernizr';
 import anime from 'animejs';
 
 window.addEventListener('load', function() {
@@ -40,6 +41,50 @@ window.addEventListener('load', function() {
             duration: 600
           }
         });
+    } else if (!Modernizr.es6number && !mql.matches) {
+      formReset.style.transform = 'scale(0.8)';
+
+      animateFormLogin
+        .add({
+          targets: '.block--login-bg .bg',
+          scale: 0,
+          opacity: 0,
+          duration: 600,
+          easing: 'easeInCubic',
+        })
+        .add({
+          targets: '.form--login',
+          scale: {
+            value: 0.8,
+            easing: 'easeOutCubic',
+            duration: 600
+          },
+          opacity: {
+            value: 0,
+            easing: 'easeOutCubic',
+            duration: 600
+          }
+        })
+        .add({
+          targets: '.form--reset',
+          scale: {
+            value: 1,
+            easing: 'easeOutCubic',
+            duration: 600
+          },
+          opacity: {
+            value: 1,
+            easing: 'easeOutCubic',
+            duration: 600
+          }
+        })
+        .add({
+          targets: '.block--login-bg .bg',
+          scale: 1,
+          opacity: 1,
+          duration: 600,
+          easing: 'easeOutCubic',
+        });
     } else {
       animateFormLogin
         .add({
@@ -62,6 +107,7 @@ window.addEventListener('load', function() {
             duration: 600,
             delay: 600
           },
+          perspective: '800px',
           offset: '-=300'
         })
         .add({
@@ -84,6 +130,7 @@ window.addEventListener('load', function() {
             duration: 600,
             delay: 600
           },
+          perspective: '800px',
           offset: '-=300'
         });
     }

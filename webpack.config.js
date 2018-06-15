@@ -26,70 +26,83 @@ const conf = {
 
   module: {
     rules: [{
-      test: /\.slim$/,
-      use: extractHTML.extract({
-        use: [{
-          loader: 'html-loader',
-          options: {
-            minimize: false
-          }
-        }, {
-          loader: 'slim-lang-loader',
-          options: {
-            slimOptions: {
-              //'pretty': true
-            }
-          }
-        }]
-      })
-    }, {
-      test: /\.scss$/,
-      use: extractCSS.extract({
-        use: [{
-          loader: 'css-loader',
-          options: {
-            sourceMap: true
-          }
-        }, {
-          loader: 'postcss-loader',
-          options: {
-            sourceMap: true
-          }
-        }, {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: true
-          }
-        }],
-        fallback: 'style-loader'
-      })
-    }, {
-      test: /\.(png|gif|jpe?g)$/,
-      loaders: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: './images/'
-          },
-        },
-        'img-loader',
-      ]
-    }, {
-      test: /\.svg$/,
-      use: [{
-        loader: 'svg-url-loader',
-        options: {
-          encoding: 'base64'
-        }
+        test: /\.modernizrrc.js$/,
+        use: ['modernizr-loader']
+      },
+      {
+        test: /\.modernizrrc(\.json)?$/,
+        use: ['modernizr-loader', 'json-loader']
       }, {
-        loader: 'svgo-loader',
-        options: {
-          plugins: [{
-            removeViewBox: false
+        test: /\.slim$/,
+        use: extractHTML.extract({
+          use: [{
+            loader: 'html-loader',
+            options: {
+              minimize: false
+            }
+          }, {
+            loader: 'slim-lang-loader',
+            options: {
+              slimOptions: {
+                //'pretty': true
+              }
+            }
           }]
-        }
-      }, ]
-    }]
+        })
+      }, {
+        test: /\.scss$/,
+        use: extractCSS.extract({
+          use: [{
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
+          }, {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }],
+          fallback: 'style-loader'
+        })
+      }, {
+        test: /\.(png|gif|jpe?g)$/,
+        loaders: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './images/'
+            },
+          },
+          'img-loader',
+        ]
+      }, {
+        test: /\.svg$/,
+        use: [{
+          loader: 'svg-url-loader',
+          options: {
+            encoding: 'base64'
+          }
+        }, {
+          loader: 'svgo-loader',
+          options: {
+            plugins: [{
+              removeViewBox: false
+            }]
+          }
+        }, ]
+      }
+    ]
+  },
+  resolve: {
+    alias: {
+      modernizr$: path.resolve(__dirname, '.modernizrrc')
+    }
   },
 
   plugins: [
