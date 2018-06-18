@@ -452,7 +452,8 @@ template {
     display: none; } }
 
 .block--form-flip {
-  position: relative; }
+  position: relative;
+  z-index: 1; }
   @media (min-width: 800px) {
     .block--form-flip {
       -webkit-transform-style: preserve-3d;

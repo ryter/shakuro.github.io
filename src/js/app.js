@@ -103,7 +103,7 @@ window.addEventListener('load', function() {
           },
           rotateY: {
             value: 180,
-            easing: 'easeOutCubic',
+            easing: 'linear',
             duration: 600,
             delay: 600
           },
@@ -126,7 +126,7 @@ window.addEventListener('load', function() {
           },
           rotateY: {
             value: 180,
-            easing: 'easeOutCubic',
+            easing: 'linear',
             duration: 600,
             delay: 600
           },
@@ -138,8 +138,10 @@ window.addEventListener('load', function() {
   choiceAnimate();
 
   function forgotLogin() {
-    formReset.style.zIndex = '2';
-    formLogin.style.zIndex = '0';
+    if (!Modernizr.es6number) {
+      formReset.style.zIndex = '2';
+      formLogin.style.zIndex = '0';
+    }
     if (animateFormLogin.reversed) {
       animateFormLogin.reverse();
       animateFormLogin.play();
@@ -149,8 +151,10 @@ window.addEventListener('load', function() {
   };
 
   function backLogin() {
-    formReset.style.zIndex = '0';
-    formLogin.style.zIndex = '2';
+    if (!Modernizr.es6number) {
+      formReset.style.zIndex = '0';
+      formLogin.style.zIndex = '2';
+    }
     if (!animateFormLogin.reversed) {
       animateFormLogin.reverse();
       animateFormLogin.play();

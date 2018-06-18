@@ -87,6 +87,7 @@
 
   &--form-flip {
     position: relative;
+    z-index: 1;
     @include media-breakpoint-up(lg) {
       transform-style: preserve-3d;
       width: 272px;

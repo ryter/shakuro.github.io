@@ -11,6 +11,7 @@
       box-shadow: 0 20px 90px -30px rgba($black, 0.25);
       padding-right: 24px;
       padding-left: 24px;
+      //transform-style: preserve-3d;
 
       .es6number & {
         backface-visibility: hidden;
@@ -35,7 +36,6 @@
   }
 
   &--reset {
-
     @include media-breakpoint-up(lg) {
       .es6number & {
         transform: rotateY(180deg);
